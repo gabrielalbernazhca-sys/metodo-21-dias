@@ -1,0 +1,460 @@
+[index.html](https://github.com/user-attachments/files/24461499/index.html)
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método 21 Dias - Recupere Sua Liberdade</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2A9D8F;
+            /* Calming Teal */
+            --primary-dark: #21867a;
+            --secondary: #264653;
+            /* Deep Blue/Green */
+            --accent: #E9C46A;
+            /* Warm Gold */
+            --bg-body: #F7F9FA;
+            --bg-white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #555555;
+            --radius: 12px;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 18px;
+            /* Larger text for readability (45+) */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'DM Serif Display', serif;
+            color: var(--secondary);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 196, 106, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #edcc7e;
+            box-shadow: 0 6px 20px rgba(233, 196, 106, 0.5);
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(38, 70, 83, 0.85), rgba(38, 70, 83, 0.75)), url('hero.png') no-repeat center center/cover;
+            color: var(--bg-white);
+            padding: 5rem 0 6rem;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            color: var(--bg-white);
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            color: #f0f0f0;
+        }
+
+        /* Pain Section */
+        .pain-card {
+            background: var(--bg-white);
+            border-left: 6px solid var(--primary);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .pain-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Method Section */
+        .method-section {
+            background-color: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .icon-check {
+            background-color: rgba(42, 157, 143, 0.1);
+            color: var(--primary);
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Who is this for */
+        .who-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media(min-width: 700px) {
+            .who-grid {
+                flex-direction: row;
+            }
+
+            .who-col {
+                flex: 1;
+            }
+        }
+
+        .who-box {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+        }
+
+        .who-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-box ul {
+            list-style: none;
+        }
+
+        .who-box li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .for-you li::before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .not-for-you li::before {
+            content: "✕";
+            color: #d62828;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            background: var(--secondary);
+            color: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .pricing-section h2 {
+            color: var(--bg-white);
+        }
+
+        .pricing-section p {
+            color: #e0e0e0;
+        }
+
+        .price-box {
+            margin: 2rem 0;
+        }
+
+        .price-value {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+            position: relative;
+            top: 10px;
+        }
+
+        .guarantee {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-up {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container animate-up">
+            <h1>Finalmente Livre do Cigarro</h1>
+            <p class="subtitle">Um método passo a passo, humano e sem sofrimento para quem já tentou de tudo e quer
+                recuperar a saúde.</p>
+            <a href="#offer" class="btn btn-large">Quero Parar de Fumar Agora</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Pain Section -->
+        <section>
+            <div class="pain-card">
+                <p><strong>Você sente que o tempo está passando e o cigarro ainda controla sua vida?</strong></p>
+                <br>
+                <p>Sabemos como é frustrante. Você já tentou parar muitas vezes. Usou adesivos, chicletes, prometeu para
+                    a família no Réveillon... mas a ansiedade bateu e você voltou.</p>
+                <p>A culpa não é sua. O vício cria armadilhas mentais que "força de vontade" sozinha não resolve. Mas
+                    existe uma saída digna, sem remédios caros e sem choque.</p>
+            </div>
+        </section>
+
+        <!-- Method Section -->
+        <section class="method-section">
+            <h2 class="text-center">O Método 21 Dias</h2>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto 2rem;">Não é mágica. É um guia de reeducação
+                diária. Pequenas ações que desmontam o vício peça por peça.</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon-check">1</div>
+                    <div>
+                        <h3>Entenda os Gatilhos</h3>
+                        <p>Aprenda a identificar e desarmar os momentos de ansiedade antes que eles te dominem.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-check">2</div>
+                    <div>
+                        <h3>Recupere o Controle</h3>
+                        <p>Técnicas simples para retomar o comando das suas escolhas, dia após dia.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-check">3</div>
+                    <div>
+                        <h3>Sinta a Liberdade</h3>
+                        <p>Volte a sentir cheiros, sabores e a respirar fundo sem aquele peso no peito.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-check">4</div>
+                    <div>
+                        <h3>Sem Sofrimento Solitário</h3>
+                        <p>Um passo a passo que segura na sua mão e te guia com clareza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits List -->
+        <section>
+            <h2 class="text-center">Imagine sua vida daqui a 3 semanas...</h2>
+            <div class="features-grid" style="margin-top: 2rem;">
+                <div class="who-box" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+                    <ul class="for-you" style="font-size: 1.1rem;">
+                        <li><strong>Saúde Renovada:</strong> Respire fundo e sinta seus pulmões limpos novamente.</li>
+                        <li><strong>Economia Real:</strong> O dinheiro que virava fumaça agora realiza seus sonhos.</li>
+                        <li><strong>Paladar e Olfato:</strong> A comida volta a ter aquele sabor maravilhoso.</li>
+                        <li><strong>Orgulho da Família:</strong> Seja o exemplo de superação para seus filhos e netos.
+                        </li>
+                        <li><strong>Fim do Cheiro Forte:</strong> Dê adeus ao cheiro de cigarro nas roupas e na casa.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who is it for -->
+        <section>
+            <h2 class="text-center">Para quem é este método?</h2>
+
+            <div class="who-grid">
+                <div class="who-col who-box for-you">
+                    <h3>Para Você que...</h3>
+                    <ul>
+                        <li>Fuma há anos e sente os efeitos na saúde.</li>
+                        <li>Já tentou parar várias vezes e falhou.</li>
+                        <li>Quer um método claro, sem enrolação.</li>
+                        <li>Busca uma abordagem humana e compreensiva.</li>
+                    </ul>
+                </div>
+                <div class="who-col who-box not-for-you">
+                    <h3>Não é para quem...</h3>
+                    <ul>
+                        <li>Procura uma "pílula mágica" que resolve tudo em 24h.</li>
+                        <li>Não está disposto a ler e aplicar pequenas mudanças.</li>
+                        <li>Acha que parar de fumar não exige nenhum comprometimento.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offer / Pricing -->
+        <section id="offer" class="pricing-section">
+            <h2>Comece Sua Nova Vida Hoje</h2>
+            <p>Menos que o valor de alguns maços de cigarro.</p>
+
+            <div class="price-box">
+                <div class="price-value"><span class="price-currency">R$</span>27<span
+                        style="font-size: 1.5rem">,00</span></div>
+                <p style="opacity: 0.7; font-size: 0.9rem;">Pagamento único. Acesso imediato.</p>
+            </div>
+
+            <a href="https://kiwify.app/NzMA9Nt" class="btn btn-large"
+                style="background-color: var(--accent); color: var(--secondary); min-width: 280px;">Quero o Método 21
+                Dias Agora</a>
+
+            <div class="guarantee">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Compra 100% Segura e Garantida</span>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Método 21 Dias. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Este produto não substitui o aconselhamento médico
+            profissional. Sempre consulte um médico para assuntos relacionados à sua saúde.</p>
+    </footer>
+
+</body>
+
+</html>
